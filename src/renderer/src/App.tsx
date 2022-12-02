@@ -1,11 +1,5 @@
 import './styles/global.css'
 
 export function App() {
-  return (
-    <div>
-      <h1 className="text-violet-400" style={{ fontFamily: 'Inter' }}>
-        e aee
-      </h1>
-    </div>
-  )
+  return <div className="h-screen w-screen bg-rotion-900 text-rotion-100"></div>
 }
