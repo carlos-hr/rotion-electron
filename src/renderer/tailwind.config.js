@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.tsx'],
@@ -6,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: 'Inter, sans-serif',
       },
+
       colors: {
         rotion: {
           50: '#ebeaed',
@@ -20,7 +23,35 @@ module.exports = {
           900: '#17141f',
         },
       },
+
+      keyframes: {
+        slideIn: {
+          from: { width: 0 },
+          to: { width: 'var(--radix-collapsible-content-width)' },
+        },
+        slideOut: {
+          from: { width: 'var(--radix-collapsible-content-width)' },
+          to: { width: 0 },
+        },
+      },
+
+      animation: {
+        slideIn: 'slideIn 0.25s',
+        slideOut: 'slideOut 0.25s',
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        '.region-drag': {
+          '-webkit-app-region': 'drag',
+        },
+        '.region-no-drag': {
+          '-webkit-app-region': 'no-drag',
+        },
+      })
+    }),
+  ],
 }
