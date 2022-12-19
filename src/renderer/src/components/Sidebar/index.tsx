@@ -13,7 +13,7 @@ export function Sidebar() {
   const { data } = useQuery(['documents'], async () => {
     const response = await window.api.fetchDocuments()
 
-    return response
+    return response.data
   })
 
   return (
@@ -53,14 +53,13 @@ export function Sidebar() {
             <Navigation.SectionTitle>Workspace</Navigation.SectionTitle>
             <Navigation.SectionContent>
               {data?.map((document) => (
-                <Navigation.Link key={document.id}>
+                <Navigation.Link
+                  key={document.id}
+                  to={`/documents/${document.id}`}
+                >
                   {document.title}
                 </Navigation.Link>
               ))}
-              {/* <Navigation.Link>Untitled</Navigation.Link>
-              <Navigation.Link>Discover</Navigation.Link>
-              <Navigation.Link>Ignite</Navigation.Link>
-              <Navigation.Link>Rocketseat</Navigation.Link> */}
             </Navigation.SectionContent>
           </Navigation.Section>
         </Navigation.Root>
