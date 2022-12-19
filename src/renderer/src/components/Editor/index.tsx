@@ -5,7 +5,11 @@ import Typography from '@tiptap/extension-typography'
 import Placeholder from '@tiptap/extension-placeholder'
 import Document from '@tiptap/extension-document'
 
-export function Editor() {
+interface EditorProps {
+  content: string
+}
+
+export function Editor({ content }: EditorProps) {
   const editor = useEditor({
     extensions: [
       Highlight,
@@ -26,7 +30,7 @@ export function Editor() {
       }),
     ],
 
-    content: '<h1>Backend</h1><p>Esse é um doc pra falar de beck</p>',
+    content,
     autofocus: 'end',
     editorProps: {
       attributes: {
