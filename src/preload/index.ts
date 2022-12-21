@@ -35,7 +35,7 @@ const api = {
   },
 
   deleteDocument(req: DeleteDocumentRequest): Promise<void> {
-    return ipcRenderer.invoke(IPC.DOCUMENTS.FETCH, req)
+    return ipcRenderer.invoke(IPC.DOCUMENTS.DELETE, req)
   },
 }
 
