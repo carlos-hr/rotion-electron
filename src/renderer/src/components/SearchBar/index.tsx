@@ -30,7 +30,7 @@ export function SearchBar({ open, onOpenChange }: SearchBarProps) {
   })
 
   function handleOpenDocument(id: string) {
-    navigate(`/document/${id}`)
+    navigate(`/documents/${id}`)
     onOpenChange(false)
   }
 
