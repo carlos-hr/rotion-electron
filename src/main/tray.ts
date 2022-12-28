@@ -12,25 +12,6 @@ export function createTray(window: BrowserWindow) {
       click: () => window.webContents.send('new-document'),
     },
     { type: 'separator' },
-    { label: 'Documentos recentes', click: () => console.log('new') },
-    {
-      label: 'Discover',
-      accelerator: 'CommandOrControl+1',
-      acceleratorWorksWhenHidden: false,
-      click: () => console.log('new'),
-    },
-    {
-      label: 'Discover',
-      accelerator: 'CommandOrControl+1',
-      acceleratorWorksWhenHidden: false,
-      click: () => console.log('new'),
-    },
-    {
-      label: 'Discover',
-      accelerator: 'CommandOrControl+1',
-      acceleratorWorksWhenHidden: false,
-      click: () => console.log('new'),
-    },
     { type: 'separator' },
     { label: 'Sair do app', role: 'quit' },
   ])
